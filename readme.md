@@ -21,6 +21,7 @@ docker-compose run app bash -c "pytest test_end_to_end.py --driver Remote --capa
 4. The last options `--live-server-port 5000 --live-server-host 0.0.0.0` are used by `pytest-flask` to [setup the live_server fixture](https://pytest-flask.readthedocs.io/en/latest/features.html#live-server-application-live-server).
  
  It fails..
+ 
  ![Test failing](docs/flask_failing.gif)
  
 ## Testing from the Host
