@@ -1,18 +1,16 @@
-from flask import url_for
 import pytest
 
 
 @pytest.fixture
-def selenium(selenium, live_server):
+def selenium(selenium):
     yield selenium
     selenium.close()
 
 
 def test_opening_up_web_page(selenium):
-    # create the url per the pytest-selenium docs
-    url = url_for('hi', _external=True)
-
     # go to the web page
+    url = 'http://0.0.0.0:5000'
+    print(url)
     selenium.get(url)
 
     # print out the beginning of what is found

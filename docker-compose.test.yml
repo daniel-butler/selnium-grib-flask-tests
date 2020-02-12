@@ -1,21 +1,15 @@
 version: "3"
 
 services:
-  app:
+  test-app:
     build:
       context: .
-      dockerfile: src/Dockerfile
-    depends_on:
-      - selenium-hub
-    environment:
-      - FLASK_APP=http_app.py
-      - FLASK_ENV=development
+      dockerfile: functional_tests/Dockerfile
     volumes:
-      - ./src:/src
-    ports:
-      - "5000:5000"
+      - ./functional_tests:/src
+    links:
+      - selenium-hub
     stdin_open: true
-    command: bash -c "flask run --host 0.0.0.0"
 
   selenium-hub:
     image: selenium/hub:latest
