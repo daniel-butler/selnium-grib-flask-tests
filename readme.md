@@ -13,7 +13,7 @@ Run the simple selenium test.
 docker-compose run app bash -c "pytest test_end_to_end.py --driver Remote --capability browserName chrome --host selenium-hub --live-server-port 5000 --live-server-host 0.0.0.0"
 ```
 
-###Breaking down command above
+### Breaking down command above
 1. Run `pytest` in the app container `docker-compose run app bash -c "" pytest ..."`
 2. The next piece `test_end_to_end.py` says run that file under test. Our current working directory is `/src` because it is specified at the end of the `src/Dockerfile`
 3. The next three options are `--driver Remote --capability browserName chrome --host selenium-hub` these are passed to `pytest-selenium` [setting selenium-grid as the webdriver](https://pytest-selenium.readthedocs.io/en/latest/user_guide.html#selenium-server-grid).
