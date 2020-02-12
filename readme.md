@@ -26,5 +26,3 @@ docker-compose run app bash -c "pytest test_end_to_end.py --driver Remote --capa
 ## Testing from the Host
 The flask site works from the host
 ![Flask app working](docs/flask_app_from_host.png)
-
-Running the test
