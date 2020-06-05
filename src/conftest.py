@@ -5,6 +5,5 @@ from . import http_app
 
 @pytest.fixture
 def app():
-    app = http_app.app
-    return app
+    return http_app.app
 
